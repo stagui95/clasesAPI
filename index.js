@@ -37,7 +37,7 @@ const Libro = mongoose.model("Libro", libroSchema);
 // Middleware de autenticación (Seguridad)
 
 app.use((req, res, next) => {
-    const authToken = req.headers("authorization");
+    const authToken = req.headers["authorization"];
 
     if( authToken === "miTokenSecreto123") {
         next();

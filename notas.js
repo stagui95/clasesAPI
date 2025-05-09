@@ -110,5 +110,13 @@ Elimina el libro: findByIdAndDelete
 .gitignore sirve para ubicar las carpetas que 
 no se quiere que se suban al repositorio
 
+Como desplegar aplicaciones con render
+
+para el proyecto Add New => Web services
+
+
+
+
+
 
 */
