@@ -95,6 +95,30 @@ app.get("/libros", async (req, res) => {
     }
 });
 
+// Ruta para actualizar un libro
+
+app.put("/libros/:id", async (req, res ) =>{
+    try {
+        const libro = await Libro.findByIdAndUpdate(
+            req.params.id,
+            {
+                titulo: req.body.titulo,
+                autor: req.body.autor,
+            },
+            {new: true}
+        );
+
+        if (libro) {
+            res.json(libro);
+        } else {
+            res.status(404).send("Libro no encontrado");
+        }
+    } catch (error) {
+        res.status(500).send("Error al actualizar el libro");
+    }
+});
+
+
 
 // Ruta para eliminar un libro por su ID
 
